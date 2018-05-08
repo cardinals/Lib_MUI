@@ -1,0 +1,15 @@
+{
+	"index.html": {
+		"resources": [
+			"main.html",
+			"news.html"
+		],
+		"refer": [
+			"main.html",
+			"video.html",
+			"news.html",
+			"case.html",
+			"mine.html"
+		]
+	}
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+</head>
+<body>
+	<nav class="mui-bar mui-bar-tab">
+	    <a class="mui-tab-item mui-active" id="main">
+	        <span class="mui-icon iconfont icon-shouye"></span>
+	        <span class="mui-tab-label">首页</span>
+	    </a>
+	    <a class="mui-tab-item" id="news">
+	        <span class="mui-icon iconfont icon-xinwenzixun"></span>
+	        <span class="mui-tab-label">资讯</span>
+	    </a>
+	    <a class="mui-tab-item" id="case">
+	        <span class="mui-icon iconfont icon-icon"></span>
+	        <span class="mui-tab-label">案例</span>
+	    </a>
+	    <a class="mui-tab-item" id="video">
+	        <span class="mui-icon iconfont icon-shipin3"></span>
+	        <span class="mui-tab-label">视频</span>
+	    </a>
+	    <a class="mui-tab-item" id="mine">
+	        <span class="mui-icon iconfont icon-iconwosel"></span>
+	        <span class="mui-tab-label">我的</span>
+	    </a>
+	</nav>
+
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript">
+		function changeView(id){
+		    var view = plus.webview.getWebviewById(id);
+		    plus.webview.show(view);
+		}
+		
+		var tabPageStyle = {top:'0', bottom:'50px'};
+		mui.init({
+		    subpages:[{
+		        url:'news.html',
+		        id:'news.html',
+		        styles:tabPageStyle
+		    },{
+		        url:'case.html',
+		        id:'case.html',
+		        styles:tabPageStyle
+		    },{
+		        url:'video.html',
+		        id:'video.html',
+		        styles:tabPageStyle
+		    },{
+		        url:'mine.html',
+		        id:'mine.html',
+		        styles:tabPageStyle
+		    },{
+		    	url:'main.html',
+		        id:'main.html',
+		        styles:tabPageStyle
+		    }]
+		});
+		
+		mui.plusReady(function(){
+			var main = plus.webview.getWebviewById('main.html');
+			if(main){
+				plus.webview.show(main);
+			}
+			
+			document.getElementById('main').addEventListener('tap', function(){
+		        changeView('main.html');
+		    });
+		    document.getElementById('news').addEventListener('tap', function(){
+		        changeView('news.html');
+		    });
+		    document.getElementById('case').addEventListener('tap', function(){
+		        changeView('case.html');
+		    });
+		    document.getElementById('video').addEventListener('tap', function(){
+		        changeView('video.html');
+		    });
+			document.getElementById('mine').addEventListener('tap', function(){
+		        changeView('mine.html');
+		    });
+    
+		})
+		  
+	</script>
+</body>
+</html>
